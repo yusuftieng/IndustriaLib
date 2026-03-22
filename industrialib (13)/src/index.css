@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=MuseoModerno:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-museo: "MuseoModerno", sans-serif;
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+}
+
+:root {
+  --bg-primary: #f8f9fa; /* Very light grey */
+  --bg-secondary: #fdfbf7; /* Soft cream */
+  --bg-card: #fcfcfc; /* Off-white */
+  --text-primary: #2d3748; /* Muted dark grey */
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --accent: #4a5568;
+}
+
+.dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-card: #171717;
+  --text-primary: #f8f9fa;
+  --text-secondary: #e2e8f0;
+  --text-muted: #a0aec0;
+  --accent: #e2e8f0;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Map Styling */
+.map-tiles {
+  filter: grayscale(100%) opacity(0.8);
+  transition: filter 0.3s ease;
+}
+
+.map-dark-mode .map-tiles {
+  filter: grayscale(100%) invert(100%) hue-rotate(180deg) opacity(0.8);
+}
+
+.custom-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.custom-map-marker svg {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease, fill 0.2s ease;
+  transform-origin: bottom center;
+}
+
+.custom-map-marker:hover svg {
+  transform: scale(1.2);
+}
+
+.custom-map-marker.selected-marker {
+  z-index: 1000 !important;
+}
+
+.custom-map-marker.selected-marker svg {
+  transform: scale(1.25);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+}
+
+.dark .custom-map-marker svg {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.dark .custom-map-marker.selected-marker svg {
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5));
+}
