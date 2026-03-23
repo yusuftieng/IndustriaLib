@@ -58,7 +58,7 @@ Distributed under the MIT License. See LICENSE for more information.
 ### Türkçe Versiyon
 
 [TR]
-# IndustriaLib ⚙️
+# IndustriaLib
 
 Endüstri Mühendisliği öğrencileri, profesyonelleri için özel olarak tasarlanmış kapsamlı site **IndustriaLib**'e hoş geldiniz.
 
